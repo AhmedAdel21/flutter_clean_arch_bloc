@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_clean_arch_bloc/di/injection.dart';
+import 'package:injectable/injectable.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  configurationDependencies(Environment.dev);
   runApp(const MyApp());
 }
 
