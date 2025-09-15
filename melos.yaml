@@ -18,9 +18,9 @@ command:
 
     dev_dependencies:
       flutter_lints: ^6.0.0
-      build_runner: ^2.8.0
       json_serializable: ^6.11.1
-      injectable_generator: ^2.8.1 
+      build_runner: ^2.7.0
+      injectable_generator: ^2.8.1
 
 scripts:
   clean: melos clean
