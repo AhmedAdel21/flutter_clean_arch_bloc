@@ -1,3 +1,4 @@
+import 'package:app_settings/provider/app_setting_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_clean_arch_bloc/di/injection.dart';
 import 'package:injectable/injectable.dart';
@@ -5,7 +6,7 @@ import 'package:injectable/injectable.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
-  configurationDependencies(Environment.dev);
+  configurationDependencies(Environment.prod);
   runApp(const MyApp());
 }
 
@@ -80,6 +81,8 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
+    AppSettingProvider appSettingProvider = getIt<AppSettingProvider>();
+
     return Scaffold(
       appBar: AppBar(
         // TRY THIS: Try changing the color here to a specific color (to
@@ -109,7 +112,8 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text('You have pushed the button this many times:'),
+            Text('App language: ${appSettingProvider.getApplanguage()}'),
+            Text('theme type: ${appSettingProvider.getThemeType()}'),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
