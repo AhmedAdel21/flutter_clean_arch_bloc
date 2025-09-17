@@ -37,6 +37,8 @@ dependencies:
 
   app_settings:
     path: features/settings/app_settings
+  datastore:
+    path: core/datastore
 
   melos: ^6.3.3
   get_it: ^8.2.0

@@ -1,0 +1,1 @@
+String get getAppName => "Dola";

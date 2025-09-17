@@ -1,4 +1,5 @@
 import 'package:app_settings/provider/app_setting_provider.dart';
+import 'package:datastore/provider/session_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_clean_arch_bloc/di/injection.dart';
 import 'package:injectable/injectable.dart';
@@ -82,6 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     AppSettingProvider appSettingProvider = getIt<AppSettingProvider>();
+    SessionProvider sessionProvider = getIt<SessionProvider>();
 
     return Scaffold(
       appBar: AppBar(
@@ -114,6 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Text('App language: ${appSettingProvider.getApplanguage()}'),
             Text('theme type: ${appSettingProvider.getThemeType()}'),
+            Text('access token: ${sessionProvider.getAccessToken()}'),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
