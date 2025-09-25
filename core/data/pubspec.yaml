@@ -12,6 +12,8 @@ dependencies:
     sdk: flutter
   domain:
     path: ../domain
+  datastore:
+    path: ../../core/datastore
 
 
   dio: ^5.9.0
@@ -19,7 +21,12 @@ dependencies:
   dartz: ^0.10.1
   connectivity_plus: ^7.0.0
 
+  injectable: ^2.5.1
+  shared_preferences: ^2.5.3
+  
 dev_dependencies:
+  injectable_generator: ^2.8.1
+  build_runner: ^2.7.0
   flutter_test:
     sdk: flutter
   flutter_lints: ^6.0.0
